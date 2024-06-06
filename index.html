@@ -1,36 +1,63 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Examen Web</title>
+    <title>Configura tu coche</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-    <div class="contenedor">
-        <h1>Configura tu coche <span id="coche">🚗</span></h1>
-        
-        <div class="grupo">
-            <input type="radio" name="amarillo" id="amarillo" value="amarillo">
-            Amarillo 
-            <div class="color-amamarillo"></div>
-        </div>
-        
-        <div class="grupo">
-            <input type="checkbox" name="rojo" id="rojo" value="rojo">
-            Rojo 
-            <div class="color-rojo"></div>
-        </div>
-
-        <div class="grupo">
-            <button name="azul" id="azul">Azul</button>
-            <div class="color-azul"></div>
+    <div class="container">
+        <div class="config">
+            <h2>Configura tu coche <span>🚗</span></h2>
+            <div class="seleccion">
+                <label for="modelo">Selecciona el modelo ↓</label>
+                <select id="modelo">
+                    <option value="Ford Focus RS">1- Ford Focus RS</option>
+                    <option value="Honda Civic Type R">2- Honda Civic Type R</option>
+                    <option value="Audi R8">3- Audi R8</option>
+                </select>
+            </div>
+            <p>Selecciona un color</p>
+            <div class="color">
+                <input type="radio" id="rojo" name="color" value="Rojo">
+                <label for="rojo">Rojo</label>
+                <input type="radio" id="verde" name="color" value="Verde">
+                <label for="verde">Verde</label>
+                <input type="radio" id="azul" name="color" value="Azul">
+                <label for="azul">Azul</label>
+            </div>
+            <p>Agrega accesorios</p>
+            <div class="accesorios">
+                <input type="checkbox" id="cuero" name="accesorio" value="Cuero">
+                <label for="cuero">Cuero</label>
+                <input type="checkbox" id="fibra" name="accesorio" value="Fibra">
+                <label for="fibra">Fibra</label>
+                <input type="checkbox" id="aleron" name="accesorio" value="Aleron">
+                <label for="aleron">Aleron</label>
+            </div>
         </div>
     </div>
-
-    <div class="info"></div>
+    <div class="info">
+        <div>
+            <p>El modelo de tu coche es:</p>
+            <p id="modelo-seleccionado" class="seleccion"></p>
+        </div>
+        <div>
+            <p>El color de tu coche es:</p>
+            <p id="color-seleccionado" class="seleccion"></p>
+        </div>
+        <div>
+            <p>Accesorios agregados:</p>
+            <p id="accesorios-seleccionados" class="seleccion"></p>
+        </div>
+    </div>
+    <footer>
+        <p>Interfaz para configurar tu auto</p>
+        <p>Creado el: 05/06/2024</p>
+        <p>Creado por: Brayan Nathanael Chan Pacheco, Josue Daniel Canul Pech</p>
+        <p class="importante">Ejercicio de examen ordinario</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
-
-<script src="script.js"></script>
 </html>
