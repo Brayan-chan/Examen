@@ -7,20 +7,26 @@ document.addEventListener('DOMContentLoaded', function () {
     const colorSeleccionado = document.getElementById('color-seleccionado');
     const accesoriosSeleccionados = document.getElementById('accesorios-seleccionados');
 
-    modelo.addEventListener('change', function () {
+    modelo.addEventListener('change', function () { //change para escuchar los cambios
         modeloSeleccionado.textContent = modelo.value;
     });
 
-    inputColores.forEach(input => {
-        input.addEventListener('change', function () {
-            colorSeleccionado.textContent = input.value;
-            colorSeleccionado.className = 'seleccion ' + input.value.toLowerCase();
+    inputColores.forEach(input => { //forEach para recorrer los elementos
+        input.addEventListener('change', function () { //change para escuchar los cambios
+            colorSeleccionado.textContent = input.value; //value para mostrar el valor
+            colorSeleccionado.className = 'seleccion ' + input.value; //className para agregar clases
         });
     });
 
-    inputsAccesorios.forEach(input => {
-        input.addEventListener('change', function () {
-           //accesoriosSeleccionados
+    inputsAccesorios.forEach(input => { //forEach para recorrer los elementos
+        input.addEventListener('change', function () { //change para escuchar los cambios
+            if (input.checked) { //checked para mostrar el valor
+                accesoriosSeleccionados.textContent += input.value + ' '; //concatenamos el valor de la variable
+                accesoriosSeleccionados.className = 'seleccion ' + input.value; //className para agregar clases
+            } else {
+                accesoriosSeleccionados.textContent = accesoriosSeleccionados.textContent.replace(input.value + ' ', ''); // + ' ', '' para borrar el valor de la variable
+                accesoriosSeleccionados.className = 'seleccion'; //className para agregar clases
+            }
         });
     });
 });

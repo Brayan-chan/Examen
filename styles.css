@@ -1,6 +1,5 @@
 body {
     font-family: 'Courier New', Courier, monospace;
-    background-color: #ffffff;
 }
 
 .container {
@@ -45,10 +44,6 @@ h2 {
 label, p {
     display: block;
     margin-bottom: 5px;
-}
-
-select, input[type="radio"], input[type="checkbox"] {
-    margin: 5px 0;
 }
 
 .info {
